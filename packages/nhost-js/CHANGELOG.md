@@ -1,5 +1,27 @@
 # @nhost/nhost-js
 
+## 1.1.0
+
+### Minor Changes
+
+- ccba0b5: Add `graphql-tag` support for GraphQL client
+  It is now possible to use a `graphql-tag` argument with `nhost.graphql.request`:
+
+  ```js
+  import gql from 'graphql-tag'
+
+  const QUERY = gql`
+    query {
+      books {
+        id
+        title
+      }
+    }
+  `
+
+  const { data, error } = await nhost.graphql.request(QUERY)
+  ```
+
 ## 1.0.11
 
 ### Patch Changes
